@@ -1,0 +1,199 @@
+{
+    "Profit & Loss": {
+        "Mar 2013": {
+            "Sales": "11,131",
+            "Expenses": "6,346",
+            "Operating Profit": "4,784",
+            "OPM %": "43%",
+            "Other Income": "-90",
+            "Interest": "43",
+            "Depreciation": "336",
+            "Profit before tax": "4,315",
+            "Tax %": "20%",
+            "Net Profit": "3,469",
+            "EPS in Rs": "14.40"
+        },
+        "Mar 2014": {
+            "Sales": "16,080",
+            "Expenses": "9,078",
+            "Operating Profit": "7,003",
+            "OPM %": "44%",
+            "Other Income": "-1,968",
+            "Interest": "44",
+            "Depreciation": "409",
+            "Profit before tax": "4,581",
+            "Tax %": "15%",
+            "Net Profit": "3,879",
+            "EPS in Rs": "15.17"
+        },
+        "Mar 2015": {
+            "Sales": "27,392",
+            "Expenses": "19,498",
+            "Operating Profit": "7,894",
+            "OPM %": "29%",
+            "Other Income": "283",
+            "Interest": "579",
+            "Depreciation": "1,195",
+            "Profit before tax": "6,403",
+            "Tax %": "14%",
+            "Net Profit": "5,476",
+            "EPS in Rs": "21.92"
+        },
+        "Mar 2016": {
+            "Sales": "28,487",
+            "Expenses": "20,313",
+            "Operating Profit": "8,174",
+            "OPM %": "29%",
+            "Other Income": "-42",
+            "Interest": "523",
+            "Depreciation": "1,038",
+            "Profit before tax": "6,571",
+            "Tax %": "14%",
+            "Net Profit": "5,658",
+            "EPS in Rs": "18.89"
+        },
+        "Mar 2017": {
+            "Sales": "31,578",
+            "Expenses": "21,476",
+            "Operating Profit": "10,102",
+            "OPM %": "32%",
+            "Other Income": "610",
+            "Interest": "400",
+            "Depreciation": "1,265",
+            "Profit before tax": "9,048",
+            "Tax %": "13%",
+            "Net Profit": "7,846",
+            "EPS in Rs": "29.03"
+        },
+        "Mar 2018": {
+            "Sales": "26,489",
+            "Expenses": "20,858",
+            "Operating Profit": "5,631",
+            "OPM %": "21%",
+            "Other Income": "-135",
+            "Interest": "518",
+            "Depreciation": "1,500",
+            "Profit before tax": "3,479",
+            "Tax %": "26%",
+            "Net Profit": "2,542",
+            "EPS in Rs": "8.73"
+        },
+        "Mar 2019": {
+            "Sales": "29,066",
+            "Expenses": "22,689",
+            "Operating Profit": "6,377",
+            "OPM %": "22%",
+            "Other Income": "-258",
+            "Interest": "555",
+            "Depreciation": "1,753",
+            "Profit before tax": "3,810",
+            "Tax %": "16%",
+            "Net Profit": "3,208",
+            "EPS in Rs": "11.11"
+        },
+        "Mar 2020": {
+            "Sales": "32,838",
+            "Expenses": "25,855",
+            "Operating Profit": "6,983",
+            "OPM %": "21%",
+            "Other Income": "382",
+            "Interest": "303",
+            "Depreciation": "2,053",
+            "Profit before tax": "5,010",
+            "Tax %": "16%",
+            "Net Profit": "4,172",
+            "EPS in Rs": "15.69"
+        },
+        "Mar 2021": {
+            "Sales": "33,498",
+            "Expenses": "25,028",
+            "Operating Profit": "8,470",
+            "OPM %": "25%",
+            "Other Income": "-3,449",
+            "Interest": "141",
+            "Depreciation": "2,080",
+            "Profit before tax": "2,799",
+            "Tax %": "18%",
+            "Net Profit": "2,272",
+            "EPS in Rs": "12.10"
+        },
+        "Mar 2022": {
+            "Sales": "38,654",
+            "Expenses": "28,397",
+            "Operating Profit": "10,258",
+            "OPM %": "27%",
+            "Other Income": "-3,505",
+            "Interest": "127",
+            "Depreciation": "2,144",
+            "Profit before tax": "4,481",
+            "Tax %": "24%",
+            "Net Profit": "3,389",
+            "EPS in Rs": "13.64"
+        },
+        "Mar 2023": {
+            "Sales": "43,886",
+            "Expenses": "32,235",
+            "Operating Profit": "11,650",
+            "OPM %": "27%",
+            "Other Income": "459",
+            "Interest": "172",
+            "Depreciation": "2,529",
+            "Profit before tax": "9,408",
+            "Tax %": "9%",
+            "Net Profit": "8,513",
+            "EPS in Rs": "35.32"
+        },
+        "Mar 2024": {
+            "Sales": "48,497",
+            "Expenses": "35,479",
+            "Operating Profit": "13,018",
+            "OPM %": "27%",
+            "Other Income": "865",
+            "Interest": "238",
+            "Depreciation": "2,557",
+            "Profit before tax": "11,088",
+            "Tax %": "13%",
+            "Net Profit": "9,610",
+            "EPS in Rs": "39.91"
+        },
+        "TTM": {
+            "Sales": "50,308",
+            "Expenses": "36,249",
+            "Operating Profit": "14,059",
+            "OPM %": "28%",
+            "Other Income": "1,571",
+            "Interest": "239",
+            "Depreciation": "2,554",
+            "Profit before tax": "12,837",
+            "Tax %": "null",
+            "Net Profit": "11,117",
+            "EPS in Rs": "46.07"
+        }
+    },
+    "Compounded Growth": {
+        "Compounded Sales Growth": {
+            "10 Years:": "12%",
+            "5 Years:": "11%",
+            "3 Years:": "13%",
+            "TTM:": "9%"
+        },
+        "Compounded Profit Growth": {
+            "10 Years:": "8%",
+            "5 Years:": "23%",
+            "3 Years:": "25%",
+            "TTM:": "25%"
+        },
+        "Stock Price CAGR": {
+            "10 Years:": "7%",
+            "5 Years:": "33%",
+            "3 Years:": "32%",
+            "1 Year:": "59%"
+        },
+        "Return on Equity": {
+            "10 Years:": "14%",
+            "5 Years:": "14%",
+            "3 Years:": "16%",
+            "Last Year:": "17%"
+        }
+    }
+}

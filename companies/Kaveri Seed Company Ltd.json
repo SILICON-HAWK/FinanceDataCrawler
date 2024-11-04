@@ -1,0 +1,870 @@
+{
+    "company_data": {
+        "company_name": "Kaveri Seed Company Ltd",
+        "stock_price": "936 INR",
+        "percentage_change": "1.62%",
+        "ratios": {
+            "Market Cap": "4,815 Cr. INR",
+            "Current Price": "936 INR",
+            "High / Low": "1,201 / 581",
+            "Stock P/E": "15.4 INR",
+            "Book Value": "240 INR",
+            "Dividend Yield": "0.52 %",
+            "ROCE": "21.8 %",
+            "ROE": "20.3 %",
+            "Face Value": "2.00 INR"
+        },
+        "about_and_key_points": "About: Kaveri Seed Company is engaged into research, production, processing and marketing of various high quality hybrid seeds. Key_points: Key points not found.",
+        "company_links": [
+            "https://www.kaveriseeds.in/our-story/details-of-business/",
+            "http://www.kaveriseeds.in/",
+            "https://www.bseindia.com/stock-share-price/kaveri-seed-company-ltd/KSCL/532899/",
+            "https://www.nseindia.com/get-quotes/equity?symbol=KSCL"
+        ]
+    },
+    "quarters_data": {
+        "Jun 2021": {
+            "Sales": "630",
+            "Expenses": "430",
+            "Operating Profit": "200",
+            "OPM %": "32%",
+            "Other Income": "15",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "210",
+            "Tax %": "2%",
+            "Net Profit": "205",
+            "EPS in Rs": "33.77"
+        },
+        "Sep 2021": {
+            "Sales": "148",
+            "Expenses": "141",
+            "Operating Profit": "6",
+            "OPM %": "4%",
+            "Other Income": "15",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "17",
+            "Tax %": "22%",
+            "Net Profit": "13",
+            "EPS in Rs": "2.19"
+        },
+        "Dec 2021": {
+            "Sales": "126",
+            "Expenses": "119",
+            "Operating Profit": "7",
+            "OPM %": "6%",
+            "Other Income": "7",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "9",
+            "Tax %": "19%",
+            "Net Profit": "7",
+            "EPS in Rs": "1.31"
+        },
+        "Mar 2022": {
+            "Sales": "67",
+            "Expenses": "77",
+            "Operating Profit": "-11",
+            "OPM %": "-16%",
+            "Other Income": "4",
+            "Interest": "0",
+            "Depreciation": "6",
+            "Profit before tax": "-12",
+            "Tax %": "-4%",
+            "Net Profit": "-12",
+            "EPS in Rs": "-2.02"
+        },
+        "Jun 2022": {
+            "Sales": "686",
+            "Expenses": "439",
+            "Operating Profit": "247",
+            "OPM %": "36%",
+            "Other Income": "7",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "249",
+            "Tax %": "2%",
+            "Net Profit": "245",
+            "EPS in Rs": "41.81"
+        },
+        "Sep 2022": {
+            "Sales": "167",
+            "Expenses": "159",
+            "Operating Profit": "9",
+            "OPM %": "5%",
+            "Other Income": "7",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "11",
+            "Tax %": "50%",
+            "Net Profit": "5",
+            "EPS in Rs": "0.91"
+        },
+        "Dec 2022": {
+            "Sales": "144",
+            "Expenses": "131",
+            "Operating Profit": "13",
+            "OPM %": "9%",
+            "Other Income": "32",
+            "Interest": "0",
+            "Depreciation": "5",
+            "Profit before tax": "40",
+            "Tax %": "4%",
+            "Net Profit": "38",
+            "EPS in Rs": "6.81"
+        },
+        "Mar 2023": {
+            "Sales": "74",
+            "Expenses": "90",
+            "Operating Profit": "-17",
+            "OPM %": "-23%",
+            "Other Income": "8",
+            "Interest": "0",
+            "Depreciation": "6",
+            "Profit before tax": "-14",
+            "Tax %": "12%",
+            "Net Profit": "-16",
+            "EPS in Rs": "-2.77"
+        },
+        "Jun 2023": {
+            "Sales": "736",
+            "Expenses": "458",
+            "Operating Profit": "278",
+            "OPM %": "38%",
+            "Other Income": "12",
+            "Interest": "0",
+            "Depreciation": "6",
+            "Profit before tax": "284",
+            "Tax %": "3%",
+            "Net Profit": "275",
+            "EPS in Rs": "48.91"
+        },
+        "Sep 2023": {
+            "Sales": "171",
+            "Expenses": "160",
+            "Operating Profit": "11",
+            "OPM %": "7%",
+            "Other Income": "14",
+            "Interest": "0",
+            "Depreciation": "6",
+            "Profit before tax": "19",
+            "Tax %": "25%",
+            "Net Profit": "14",
+            "EPS in Rs": "2.45"
+        },
+        "Dec 2023": {
+            "Sales": "143",
+            "Expenses": "134",
+            "Operating Profit": "9",
+            "OPM %": "6%",
+            "Other Income": "13",
+            "Interest": "0",
+            "Depreciation": "7",
+            "Profit before tax": "15",
+            "Tax %": "25%",
+            "Net Profit": "11",
+            "EPS in Rs": "2.11"
+        },
+        "Mar 2024": {
+            "Sales": "98",
+            "Expenses": "110",
+            "Operating Profit": "-12",
+            "OPM %": "-12%",
+            "Other Income": "25",
+            "Interest": "0",
+            "Depreciation": "10",
+            "Profit before tax": "3",
+            "Tax %": "112%",
+            "Net Profit": "-0",
+            "EPS in Rs": "-0.05"
+        },
+        "Jun 2024": {
+            "Sales": "803",
+            "Expenses": "508",
+            "Operating Profit": "295",
+            "OPM %": "37%",
+            "Other Income": "9",
+            "Interest": "0",
+            "Depreciation": "8",
+            "Profit before tax": "297",
+            "Tax %": "2%",
+            "Net Profit": "291",
+            "EPS in Rs": "56.28"
+        }
+    },
+    "balance_sheet_data": {
+        "Mar 2013": {
+            "Equity Capital": "14",
+            "Reserves": "331",
+            "Borrowings": "3",
+            "Other Liabilities": "520",
+            "Total Liabilities": "868",
+            "Fixed Assets": "137",
+            "CWIP": "8",
+            "Investments": "132",
+            "Other Assets": "590",
+            "Total Assets": "868"
+        },
+        "Mar 2014": {
+            "Equity Capital": "14",
+            "Reserves": "502",
+            "Borrowings": "1",
+            "Other Liabilities": "512",
+            "Total Liabilities": "1,028",
+            "Fixed Assets": "144",
+            "CWIP": "12",
+            "Investments": "278",
+            "Other Assets": "595",
+            "Total Assets": "1,028"
+        },
+        "Mar 2015": {
+            "Equity Capital": "14",
+            "Reserves": "741",
+            "Borrowings": "1",
+            "Other Liabilities": "402",
+            "Total Liabilities": "1,158",
+            "Fixed Assets": "161",
+            "CWIP": "62",
+            "Investments": "295",
+            "Other Assets": "641",
+            "Total Assets": "1,158"
+        },
+        "Mar 2016": {
+            "Equity Capital": "14",
+            "Reserves": "913",
+            "Borrowings": "2",
+            "Other Liabilities": "432",
+            "Total Liabilities": "1,361",
+            "Fixed Assets": "202",
+            "CWIP": "20",
+            "Investments": "506",
+            "Other Assets": "633",
+            "Total Assets": "1,361"
+        },
+        "Mar 2017": {
+            "Equity Capital": "14",
+            "Reserves": "1,001",
+            "Borrowings": "5",
+            "Other Liabilities": "509",
+            "Total Liabilities": "1,528",
+            "Fixed Assets": "200",
+            "CWIP": "34",
+            "Investments": "657",
+            "Other Assets": "637",
+            "Total Assets": "1,528"
+        },
+        "Mar 2018": {
+            "Equity Capital": "13",
+            "Reserves": "999",
+            "Borrowings": "3",
+            "Other Liabilities": "449",
+            "Total Liabilities": "1,465",
+            "Fixed Assets": "189",
+            "CWIP": "37",
+            "Investments": "623",
+            "Other Assets": "615",
+            "Total Assets": "1,465"
+        },
+        "Mar 2019": {
+            "Equity Capital": "13",
+            "Reserves": "994",
+            "Borrowings": "7",
+            "Other Liabilities": "536",
+            "Total Liabilities": "1,550",
+            "Fixed Assets": "240",
+            "CWIP": "38",
+            "Investments": "510",
+            "Other Assets": "763",
+            "Total Assets": "1,550"
+        },
+        "Mar 2020": {
+            "Equity Capital": "12",
+            "Reserves": "947",
+            "Borrowings": "6",
+            "Other Liabilities": "612",
+            "Total Liabilities": "1,577",
+            "Fixed Assets": "250",
+            "CWIP": "18",
+            "Investments": "384",
+            "Other Assets": "925",
+            "Total Assets": "1,577"
+        },
+        "Mar 2021": {
+            "Equity Capital": "12",
+            "Reserves": "1,232",
+            "Borrowings": "2",
+            "Other Liabilities": "714",
+            "Total Liabilities": "1,960",
+            "Fixed Assets": "246",
+            "CWIP": "31",
+            "Investments": "599",
+            "Other Assets": "1,085",
+            "Total Assets": "1,960"
+        },
+        "Mar 2022": {
+            "Equity Capital": "12",
+            "Reserves": "1,269",
+            "Borrowings": "1",
+            "Other Liabilities": "596",
+            "Total Liabilities": "1,877",
+            "Fixed Assets": "242",
+            "CWIP": "43",
+            "Investments": "517",
+            "Other Assets": "1,075",
+            "Total Assets": "1,877"
+        },
+        "Mar 2023": {
+            "Equity Capital": "11",
+            "Reserves": "1,354",
+            "Borrowings": "1",
+            "Other Liabilities": "683",
+            "Total Liabilities": "2,048",
+            "Fixed Assets": "261",
+            "CWIP": "133",
+            "Investments": "562",
+            "Other Assets": "1,092",
+            "Total Assets": "2,048"
+        },
+        "Mar 2024": {
+            "Equity Capital": "10",
+            "Reserves": "1,222",
+            "Borrowings": "0",
+            "Other Liabilities": "815",
+            "Total Liabilities": "2,048",
+            "Fixed Assets": "297",
+            "CWIP": "134",
+            "Investments": "476",
+            "Other Assets": "1,140",
+            "Total Assets": "2,048"
+        }
+    },
+    "cash_flows_data": {
+        "Mar 2013": {
+            "Cash from Operating Activity": "110",
+            "Cash from Investing Activity": "-58",
+            "Cash from Financing Activity": "-47",
+            "Net Cash Flow": "5"
+        },
+        "Mar 2014": {
+            "Cash from Operating Activity": "193",
+            "Cash from Investing Activity": "-162",
+            "Cash from Financing Activity": "-38",
+            "Net Cash Flow": "-8"
+        },
+        "Mar 2015": {
+            "Cash from Operating Activity": "145",
+            "Cash from Investing Activity": "-84",
+            "Cash from Financing Activity": "-61",
+            "Net Cash Flow": "-0"
+        },
+        "Mar 2016": {
+            "Cash from Operating Activity": "246",
+            "Cash from Investing Activity": "-202",
+            "Cash from Financing Activity": "-42",
+            "Net Cash Flow": "3"
+        },
+        "Mar 2017": {
+            "Cash from Operating Activity": "218",
+            "Cash from Investing Activity": "-150",
+            "Cash from Financing Activity": "-56",
+            "Net Cash Flow": "11"
+        },
+        "Mar 2018": {
+            "Cash from Operating Activity": "148",
+            "Cash from Investing Activity": "71",
+            "Cash from Financing Activity": "-226",
+            "Net Cash Flow": "-7"
+        },
+        "Mar 2019": {
+            "Cash from Operating Activity": "128",
+            "Cash from Investing Activity": "82",
+            "Cash from Financing Activity": "-219",
+            "Net Cash Flow": "-9"
+        },
+        "Mar 2020": {
+            "Cash from Operating Activity": "192",
+            "Cash from Investing Activity": "112",
+            "Cash from Financing Activity": "-301",
+            "Net Cash Flow": "3"
+        },
+        "Mar 2021": {
+            "Cash from Operating Activity": "252",
+            "Cash from Investing Activity": "-217",
+            "Cash from Financing Activity": "-29",
+            "Net Cash Flow": "5"
+        },
+        "Mar 2022": {
+            "Cash from Operating Activity": "110",
+            "Cash from Investing Activity": "66",
+            "Cash from Financing Activity": "-170",
+            "Net Cash Flow": "7"
+        },
+        "Mar 2023": {
+            "Cash from Operating Activity": "297",
+            "Cash from Investing Activity": "-119",
+            "Cash from Financing Activity": "-176",
+            "Net Cash Flow": "1"
+        },
+        "Mar 2024": {
+            "Cash from Operating Activity": "389",
+            "Cash from Investing Activity": "38",
+            "Cash from Financing Activity": "-425",
+            "Net Cash Flow": "3"
+        }
+    },
+    "profit_loss_data": {
+        "Profit & Loss": {
+            "Mar 2013": {
+                "Sales": "711",
+                "Expenses": "572",
+                "Operating Profit": "139",
+                "OPM %": "20%",
+                "Other Income": "6",
+                "Interest": "2",
+                "Depreciation": "12",
+                "Profit before tax": "132",
+                "Tax %": "3%",
+                "Net Profit": "128",
+                "EPS in Rs": "18.70"
+            },
+            "Mar 2014": {
+                "Sales": "1,010",
+                "Expenses": "789",
+                "Operating Profit": "221",
+                "OPM %": "22%",
+                "Other Income": "10",
+                "Interest": "0",
+                "Depreciation": "16",
+                "Profit before tax": "214",
+                "Tax %": "2%",
+                "Net Profit": "209",
+                "EPS in Rs": "30.42"
+            },
+            "Mar 2015": {
+                "Sales": "1,159",
+                "Expenses": "850",
+                "Operating Profit": "310",
+                "OPM %": "27%",
+                "Other Income": "15",
+                "Interest": "0",
+                "Depreciation": "15",
+                "Profit before tax": "310",
+                "Tax %": "3%",
+                "Net Profit": "301",
+                "EPS in Rs": "43.68"
+            },
+            "Mar 2016": {
+                "Sales": "743",
+                "Expenses": "556",
+                "Operating Profit": "188",
+                "OPM %": "25%",
+                "Other Income": "13",
+                "Interest": "0",
+                "Depreciation": "27",
+                "Profit before tax": "173",
+                "Tax %": "3%",
+                "Net Profit": "167",
+                "EPS in Rs": "24.31"
+            },
+            "Mar 2017": {
+                "Sales": "703",
+                "Expenses": "564",
+                "Operating Profit": "140",
+                "OPM %": "20%",
+                "Other Income": "-25",
+                "Interest": "0",
+                "Depreciation": "30",
+                "Profit before tax": "84",
+                "Tax %": "8%",
+                "Net Profit": "77",
+                "EPS in Rs": "11.27"
+            },
+            "Mar 2018": {
+                "Sales": "818",
+                "Expenses": "597",
+                "Operating Profit": "222",
+                "OPM %": "27%",
+                "Other Income": "24",
+                "Interest": "1",
+                "Depreciation": "25",
+                "Profit before tax": "220",
+                "Tax %": "4%",
+                "Net Profit": "211",
+                "EPS in Rs": "31.96"
+            },
+            "Mar 2019": {
+                "Sales": "808",
+                "Expenses": "596",
+                "Operating Profit": "212",
+                "OPM %": "26%",
+                "Other Income": "43",
+                "Interest": "1",
+                "Depreciation": "23",
+                "Profit before tax": "231",
+                "Tax %": "6%",
+                "Net Profit": "217",
+                "EPS in Rs": "34.45"
+            },
+            "Mar 2020": {
+                "Sales": "929",
+                "Expenses": "676",
+                "Operating Profit": "253",
+                "OPM %": "27%",
+                "Other Income": "46",
+                "Interest": "0",
+                "Depreciation": "26",
+                "Profit before tax": "273",
+                "Tax %": "5%",
+                "Net Profit": "260",
+                "EPS in Rs": "42.94"
+            },
+            "Mar 2021": {
+                "Sales": "1,033",
+                "Expenses": "735",
+                "Operating Profit": "298",
+                "OPM %": "29%",
+                "Other Income": "46",
+                "Interest": "1",
+                "Depreciation": "22",
+                "Profit before tax": "321",
+                "Tax %": "3%",
+                "Net Profit": "311",
+                "EPS in Rs": "51.47"
+            },
+            "Mar 2022": {
+                "Sales": "968",
+                "Expenses": "765",
+                "Operating Profit": "203",
+                "OPM %": "21%",
+                "Other Income": "41",
+                "Interest": "0",
+                "Depreciation": "21",
+                "Profit before tax": "223",
+                "Tax %": "4%",
+                "Net Profit": "213",
+                "EPS in Rs": "36.43"
+            },
+            "Mar 2023": {
+                "Sales": "1,068",
+                "Expenses": "816",
+                "Operating Profit": "252",
+                "OPM %": "24%",
+                "Other Income": "55",
+                "Interest": "0",
+                "Depreciation": "21",
+                "Profit before tax": "286",
+                "Tax %": "5%",
+                "Net Profit": "273",
+                "EPS in Rs": "48.59"
+            },
+            "Mar 2024": {
+                "Sales": "1,146",
+                "Expenses": "860",
+                "Operating Profit": "286",
+                "OPM %": "25%",
+                "Other Income": "63",
+                "Interest": "0",
+                "Depreciation": "28",
+                "Profit before tax": "321",
+                "Tax %": "7%",
+                "Net Profit": "300",
+                "EPS in Rs": "58.08"
+            },
+            "TTM": {
+                "Sales": "1,216",
+                "Expenses": "912",
+                "Operating Profit": "303",
+                "OPM %": "25%",
+                "Other Income": "61",
+                "Interest": "0",
+                "Depreciation": "30",
+                "Profit before tax": "334",
+                "Tax %": "null",
+                "Net Profit": "316",
+                "EPS in Rs": "60.79"
+            }
+        },
+        "Compounded Growth": {
+            "Compounded Sales Growth": {
+                "10 Years:": "1%",
+                "5 Years:": "7%",
+                "3 Years:": "4%",
+                "TTM:": "8%"
+            },
+            "Compounded Profit Growth": {
+                "10 Years:": "3%",
+                "5 Years:": "7%",
+                "3 Years:": "-3%",
+                "TTM:": "4%"
+            },
+            "Stock Price CAGR": {
+                "10 Years:": "0%",
+                "5 Years:": "11%",
+                "3 Years:": "21%",
+                "1 Year:": "48%"
+            },
+            "Return on Equity": {
+                "10 Years:": "21%",
+                "5 Years:": "20%",
+                "3 Years:": "17%",
+                "Last Year:": "20%"
+            }
+        }
+    },
+    "ratios_data": {
+        "Mar 2013": {
+            "Debtor Days": "35",
+            "Inventory Days": "568",
+            "Days Payable": "288",
+            "Cash Conversion Cycle": "316",
+            "Working Capital Days": "27",
+            "ROCE %": "48"
+        },
+        "Mar 2014": {
+            "Debtor Days": "24",
+            "Inventory Days": "484",
+            "Days Payable": "223",
+            "Cash Conversion Cycle": "284",
+            "Working Capital Days": "24",
+            "ROCE %": "47"
+        },
+        "Mar 2015": {
+            "Debtor Days": "37",
+            "Inventory Days": "411",
+            "Days Payable": "128",
+            "Cash Conversion Cycle": "320",
+            "Working Capital Days": "74",
+            "ROCE %": "21"
+        },
+        "Mar 2016": {
+            "Debtor Days": "39",
+            "Inventory Days": "462",
+            "Days Payable": "198",
+            "Cash Conversion Cycle": "304",
+            "Working Capital Days": "96",
+            "ROCE %": "15"
+        },
+        "Mar 2017": {
+            "Debtor Days": "44",
+            "Inventory Days": "399",
+            "Days Payable": "270",
+            "Cash Conversion Cycle": "174",
+            "Working Capital Days": "56",
+            "ROCE %": "21"
+        },
+        "Mar 2018": {
+            "Debtor Days": "38",
+            "Inventory Days": "386",
+            "Days Payable": "192",
+            "Cash Conversion Cycle": "233",
+            "Working Capital Days": "75",
+            "ROCE %": "20"
+        },
+        "Mar 2019": {
+            "Debtor Days": "38",
+            "Inventory Days": "483",
+            "Days Payable": "188",
+            "Cash Conversion Cycle": "334",
+            "Working Capital Days": "95",
+            "ROCE %": "24"
+        },
+        "Mar 2020": {
+            "Debtor Days": "46",
+            "Inventory Days": "485",
+            "Days Payable": "203",
+            "Cash Conversion Cycle": "329",
+            "Working Capital Days": "126",
+            "ROCE %": "27"
+        },
+        "Mar 2021": {
+            "Debtor Days": "37",
+            "Inventory Days": "486",
+            "Days Payable": "242",
+            "Cash Conversion Cycle": "281",
+            "Working Capital Days": "130",
+            "ROCE %": "16"
+        },
+        "Mar 2022": {
+            "Debtor Days": "42",
+            "Inventory Days": "517",
+            "Days Payable": "156",
+            "Cash Conversion Cycle": "403",
+            "Working Capital Days": "175",
+            "ROCE %": "17"
+        },
+        "Mar 2023": {
+            "Debtor Days": "46",
+            "Inventory Days": "464",
+            "Days Payable": "150",
+            "Cash Conversion Cycle": "360",
+            "Working Capital Days": "123",
+            "ROCE %": "22"
+        },
+        "Mar 2024": {
+            "Debtor Days": "36",
+            "Inventory Days": "467",
+            "Days Payable": "155",
+            "Cash Conversion Cycle": "347",
+            "Working Capital Days": "80",
+            "ROCE %": "null"
+        }
+    },
+    "shareholding_data": {
+        "Quarterly": {
+            "Promoters": {
+                "Dec 2021": "57.44%",
+                "Mar 2022": "57.44%",
+                "Jun 2022": "57.44%",
+                "Sep 2022": "57.44%",
+                "Dec 2022": "59.90%",
+                "Mar 2023": "59.90%",
+                "Jun 2023": "59.90%",
+                "Sep 2023": "59.90%",
+                "Dec 2023": "59.90%",
+                "Mar 2024": "60.50%",
+                "Jun 2024": "60.50%",
+                "Sep 2024": "60.50%"
+            },
+            "FIIs": {
+                "Dec 2021": "17.58%",
+                "Mar 2022": "17.61%",
+                "Jun 2022": "17.68%",
+                "Sep 2022": "15.03%",
+                "Dec 2022": "16.45%",
+                "Mar 2023": "16.54%",
+                "Jun 2023": "16.29%",
+                "Sep 2023": "16.29%",
+                "Dec 2023": "17.69%",
+                "Mar 2024": "17.22%",
+                "Jun 2024": "18.97%",
+                "Sep 2024": "19.84%"
+            },
+            "DIIs": {
+                "Dec 2021": "6.69%",
+                "Mar 2022": "6.95%",
+                "Jun 2022": "7.45%",
+                "Sep 2022": "6.44%",
+                "Dec 2022": "6.86%",
+                "Mar 2023": "6.80%",
+                "Jun 2023": "6.76%",
+                "Sep 2023": "6.76%",
+                "Dec 2023": "4.58%",
+                "Mar 2024": "4.83%",
+                "Jun 2024": "4.98%",
+                "Sep 2024": "3.77%"
+            },
+            "Public": {
+                "Dec 2021": "16.79%",
+                "Mar 2022": "16.50%",
+                "Jun 2022": "15.94%",
+                "Sep 2022": "19.60%",
+                "Dec 2022": "15.22%",
+                "Mar 2023": "15.18%",
+                "Jun 2023": "15.58%",
+                "Sep 2023": "15.58%",
+                "Dec 2023": "16.36%",
+                "Mar 2024": "15.87%",
+                "Jun 2024": "14.97%",
+                "Sep 2024": "15.31%"
+            },
+            "Others": {
+                "Dec 2021": "1.51%",
+                "Mar 2022": "1.50%",
+                "Jun 2022": "1.50%",
+                "Sep 2022": "1.50%",
+                "Dec 2022": "1.57%",
+                "Mar 2023": "1.56%",
+                "Jun 2023": "1.46%",
+                "Sep 2023": "1.46%",
+                "Dec 2023": "1.46%",
+                "Mar 2024": "1.58%",
+                "Jun 2024": "0.59%",
+                "Sep 2024": "0.58%"
+            },
+            "No. of Shareholders": {
+                "Dec 2021": "68,174",
+                "Mar 2022": "67,286",
+                "Jun 2022": "60,791",
+                "Sep 2022": "70,405",
+                "Dec 2022": "60,036",
+                "Mar 2023": "57,574",
+                "Jun 2023": "56,829",
+                "Sep 2023": "56,829",
+                "Dec 2023": "49,174",
+                "Mar 2024": "52,447",
+                "Jun 2024": "49,074",
+                "Sep 2024": "56,652"
+            }
+        },
+        "Yearly": {
+            "Promoters": {
+                "Mar 2017": "54.43%",
+                "Mar 2018": "54.79%",
+                "Mar 2019": "55.09%",
+                "Mar 2020": "55.52%",
+                "Mar 2021": "55.52%",
+                "Mar 2022": "57.44%",
+                "Mar 2023": "59.90%",
+                "Mar 2024": "60.50%",
+                "Sep 2024": "60.50%"
+            },
+            "FIIs": {
+                "Mar 2017": "20.92%",
+                "Mar 2018": "18.29%",
+                "Mar 2019": "20.02%",
+                "Mar 2020": "21.01%",
+                "Mar 2021": "14.38%",
+                "Mar 2022": "17.61%",
+                "Mar 2023": "16.54%",
+                "Mar 2024": "17.22%",
+                "Sep 2024": "19.84%"
+            },
+            "DIIs": {
+                "Mar 2017": "7.27%",
+                "Mar 2018": "9.82%",
+                "Mar 2019": "8.50%",
+                "Mar 2020": "10.74%",
+                "Mar 2021": "12.48%",
+                "Mar 2022": "6.95%",
+                "Mar 2023": "6.80%",
+                "Mar 2024": "4.83%",
+                "Sep 2024": "3.77%"
+            },
+            "Public": {
+                "Mar 2017": "17.38%",
+                "Mar 2018": "17.10%",
+                "Mar 2019": "16.39%",
+                "Mar 2020": "12.73%",
+                "Mar 2021": "16.16%",
+                "Mar 2022": "16.50%",
+                "Mar 2023": "15.18%",
+                "Mar 2024": "15.87%",
+                "Sep 2024": "15.31%"
+            },
+            "Others": {
+                "Mar 2017": "0.00%",
+                "Mar 2018": "0.00%",
+                "Mar 2019": "0.00%",
+                "Mar 2020": "0.00%",
+                "Mar 2021": "1.46%",
+                "Mar 2022": "1.50%",
+                "Mar 2023": "1.56%",
+                "Mar 2024": "1.58%",
+                "Sep 2024": "0.58%"
+            },
+            "No. of Shareholders": {
+                "Mar 2017": "29,167",
+                "Mar 2018": "39,826",
+                "Mar 2019": "30,096",
+                "Mar 2020": "28,745",
+                "Mar 2021": "52,322",
+                "Mar 2022": "67,286",
+                "Mar 2023": "57,574",
+                "Mar 2024": "52,447",
+                "Sep 2024": "56,652"
+            }
+        }
+    },
+    "company_name": "Kaveri Seed Company Ltd"
+}
