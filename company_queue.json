@@ -1,1 +1,28 @@
-["https://www.screener.in/company/HAL/", "https://www.screener.in/company/BEL/consolidated/", "https://www.screener.in/company/SOLARINDS/consolidated/", "https://www.screener.in/company/COCHINSHIP/", "https://www.screener.in/company/BDL/", "https://www.screener.in/company/GRSE/", "https://www.screener.in/company/ZENTEC/consolidated/", "https://www.screener.in/company/BEML/consolidated/", "https://www.screener.in/company/DATAPATTNS/", "https://www.screener.in/company/ASTRAMICRO/consolidated/", "https://www.screener.in/company/MIDHANI/", "https://www.screener.in/company/MTARTECH/", "https://www.screener.in/company/PARAS/consolidated/", "https://www.screener.in/company/AVANTEL/", "https://www.screener.in/company/DCXINDIA/consolidated/", "https://www.screener.in/company/APOLLO/", "https://www.screener.in/company/535136/", "https://www.screener.in/company/IDEAFORGE/", "https://www.screener.in/company/543920/", "https://www.screener.in/company/523606/consolidated/", "https://www.screener.in/company/522229/consolidated/", "https://www.screener.in/company/KRISHNADEF/", "https://www.screener.in/company/ROSSELLIND/consolidated/"]
+{
+    "": [],
+    "Aerospace & Defence Companies": [
+        "/company/HAL/",
+        "/company/BEL/consolidated/",
+        "/company/SOLARINDS/consolidated/",
+        "/company/COCHINSHIP/",
+        "/company/BDL/",
+        "/company/GRSE/",
+        "/company/BEML/consolidated/",
+        "/company/ZENTEC/consolidated/",
+        "/company/DATAPATTNS/",
+        "/company/ASTRAMICRO/consolidated/",
+        "/company/MIDHANI/",
+        "/company/MTARTECH/",
+        "/company/PARAS/consolidated/",
+        "/company/AVANTEL/",
+        "/company/DCXINDIA/consolidated/",
+        "/company/APOLLO/",
+        "/company/IDEAFORGE/",
+        "/company/535136/",
+        "/company/543920/",
+        "/company/522229/consolidated/",
+        "/company/523606/consolidated/",
+        "/company/KRISHNADEF/",
+        "/company/ROSSELLIND/consolidated/"
+    ]
+}
