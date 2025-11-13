@@ -4,3 +4,37 @@
 /sampleTest2.html
 /Explore stock screens - Screener.htm
 /Aerospace & Defence Companies - Screener.htm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+finance_data.db
+progress.json
