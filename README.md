@@ -27,12 +27,17 @@ An advanced Python application for scraping financial data from Indian stock mar
 - **Rate Limiting**: Respects website rate limits (15s interval, handles 429 responses)
 - **Error Handling**: Comprehensive error logging and recovery
 - **Configuration Management**: Flexible configuration system
+- **📊 Interactive Dashboard**: Modern Next.js web dashboard (NEW!)
+  - Real-time company search
+  - Interactive financial charts
+  - Company comparison tool
+  - Performance analytics
 
 ## 📁 Project Structure
 
 ```
 FinanceDataCrawler/
-├── src/
+├── src/                      # Python crawler package
 │   ├── __init__.py           # Package initialization
 │   ├── main.py               # CLI entry point
 │   ├── config.py             # Configuration management
@@ -42,6 +47,13 @@ FinanceDataCrawler/
 │   ├── deduplication.py      # Hash map for deduplication
 │   ├── progress.py           # Progress tracking
 │   └── validation.py         # Data validation
+├── dashboard/                # Next.js web dashboard (NEW!)
+│   ├── src/
+│   │   ├── app/              # Next.js 14 app router
+│   │   ├── components/       # React components
+│   │   └── lib/              # Database & utilities
+│   ├── package.json
+│   └── README.md             # Dashboard documentation
 ├── companies/                # Extracted company data (JSON)
 ├── json/                     # Intermediate data files
 ├── logs/                     # Application logs
@@ -293,6 +305,57 @@ Run validation:
 python run.py validate
 ```
 
+## 📊 Interactive Dashboard
+
+The Finance Data Crawler now includes a modern web dashboard built with Next.js!
+
+### Features
+
+- **Real-time Search**: Instantly search across all companies
+- **Company Details**: View comprehensive financial data with interactive charts
+- **Comparison Tool**: Compare multiple companies side-by-side
+- **Performance Analytics**: Track top performers and market trends
+- **Responsive Design**: Works on desktop, tablet, and mobile
+
+### Quick Start
+
+1. First, crawl some data:
+```bash
+python run.py crawl --limit 10
+```
+
+2. Navigate to the dashboard:
+```bash
+cd dashboard
+npm install
+npm run dev
+```
+
+3. Open http://localhost:3000 in your browser
+
+### Dashboard Features
+
+**Home Page**:
+- Database statistics and metrics
+- Top performing companies
+- Complete company listing
+- Global search functionality
+
+**Company Detail Page**:
+- Stock price and performance metrics
+- Interactive quarterly performance charts
+- Shareholding patterns
+- Profit & Loss statements
+- Compounded growth metrics
+
+**Comparison Page**:
+- Add multiple companies
+- Side-by-side metric comparison
+- Interactive bar charts
+- Detailed comparison tables
+
+See `dashboard/README.md` for complete documentation.
+
 ## 📝 Development Status
 
 ### Completed Tasks ✅
@@ -302,20 +365,25 @@ python run.py validate
 - Task 3.1: Queue Implementation ✔️
 - Task 3.2: Hash Map Implementation ✔️
 - Task 4.1-4.3: Database Implementation (SQLite) ✔️
-- **New**: Progress Tracking ✔️
-- **New**: Data Validation ✔️
-- **New**: CLI Interface ✔️
-- **New**: Configuration Management ✔️
-- **New**: Error Recovery ✔️
+- Task 5: Interactive Dashboard ✔️ (NEW!)
+  - Search function ✔️
+  - Company comparison ✔️
+  - Data visualization ✔️
+  - Interactive charts ✔️
+- **Additional Features**:
+  - Progress Tracking ✔️
+  - Data Validation ✔️
+  - CLI Interface ✔️
+  - Configuration Management ✔️
+  - Error Recovery ✔️
 
 ### Future Enhancements 🎯
 
-- Task 4: PostgreSQL Support
-- Task 5: Interactive Dashboard
-  - Search function
-  - Company comparison
-  - Data visualization
-  - Export features
+- PostgreSQL Support (optional enhancement)
+- Dashboard Export Features (CSV, PDF)
+- Real-time Data Updates
+- Advanced Analytics & Predictions
+- Mobile App
 
 ## 🤝 Contributing
 

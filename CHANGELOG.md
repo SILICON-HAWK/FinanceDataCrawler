@@ -2,6 +2,39 @@
 
 All notable changes to the Finance Data Crawler project.
 
+## [2.1.0] - 2024
+
+### 🎊 Interactive Dashboard Release
+
+#### Added
+
+**Interactive Web Dashboard** (NEW!)
+- `dashboard/` - Complete Next.js 14 application with TypeScript
+- Real-time company search functionality
+- Interactive financial data visualizations using Recharts
+- Company comparison tool with side-by-side metrics
+- Responsive design for desktop, tablet, and mobile
+- Three main pages:
+  - Home: Database statistics, top performers, company listing
+  - Company Detail: Comprehensive financial data with charts
+  - Compare: Multi-company comparison with interactive charts
+- API routes for data access:
+  - `/api/companies` - List all companies
+  - `/api/companies/[name]` - Get company details
+  - `/api/search` - Search companies
+  - `/api/stats` - Database statistics
+
+**Dashboard Features**
+- Modern UI with Tailwind CSS
+- Interactive quarterly performance charts
+- Shareholding pattern visualization
+- Profit & Loss statement displays
+- Compounded growth metrics
+- Top performers tracking
+- Complete task 5 from original roadmap ✅
+
+---
+
 ## [2.0.0] - 2024
 
 ### 🎉 Major Refactoring and Enhancements
