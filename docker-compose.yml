@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: finance_crawler_db
+    environment:
+      POSTGRES_USER: finance_user
+      POSTGRES_PASSWORD: finance_pass
+      POSTGRES_DB: finance_crawler
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U finance_user -d finance_crawler"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: finance_crawler_backend
+    environment:
+      DATABASE_URL: postgresql://finance_user:finance_pass@postgres:5432/finance_crawler
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./companies:/app/companies
+      - ./json:/app/json
+      - ./company_queue.json:/app/company_queue.json
+      - ./sectors_queue.json:/app/sectors_queue.json
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: uvicorn main_db:app --host 0.0.0.0 --port 8000 --reload
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend-nextjs
+      dockerfile: Dockerfile
+    container_name: finance_crawler_frontend
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend-nextjs:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - backend
+    command: npm run dev
+
+volumes:
+  postgres_data:
