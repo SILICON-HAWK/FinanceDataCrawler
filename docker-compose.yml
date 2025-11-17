@@ -5,6 +5,7 @@ services:
   postgres:
     image: postgres:16-alpine
     container_name: finance_crawler_db
+    restart: unless-stopped
     environment:
       POSTGRES_USER: finance_user
       POSTGRES_PASSWORD: finance_pass
@@ -15,9 +16,12 @@ services:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U finance_user -d finance_crawler"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    networks:
+      - finance_network
 
   # FastAPI Backend
   backend:
@@ -25,8 +29,10 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: finance_crawler_backend
+    restart: unless-stopped
     environment:
       DATABASE_URL: postgresql://finance_user:finance_pass@postgres:5432/finance_crawler
+      POSTGRES_PASSWORD: finance_pass
     ports:
       - "8000:8000"
     volumes:
@@ -38,7 +44,14 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
-    command: uvicorn main_db:app --host 0.0.0.0 --port 8000 --reload
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - finance_network
 
   # Next.js Frontend
   frontend:
@@ -46,6 +59,7 @@ services:
       context: ./frontend-nextjs
       dockerfile: Dockerfile
     container_name: finance_crawler_frontend
+    restart: unless-stopped
     environment:
       NEXT_PUBLIC_API_URL: http://localhost:8000
     ports:
@@ -55,8 +69,21 @@ services:
       - /app/node_modules
       - /app/.next
     depends_on:
-      - backend
-    command: npm run dev
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - finance_network
 
 volumes:
   postgres_data:
+    driver: local
+
+networks:
+  finance_network:
+    driver: bridge

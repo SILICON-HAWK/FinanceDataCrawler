@@ -4,3 +4,39 @@
 /sampleTest2.html
 /Explore stock screens - Screener.htm
 /Aerospace & Defence Companies - Screener.htm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+venv/
+ENV/
+env/
+
+# Node
+node_modules/
+.next/
+out/
+build/
+
+# Docker
+.dockerignore
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
