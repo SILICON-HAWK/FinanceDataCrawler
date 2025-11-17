@@ -2,10 +2,11 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { TrendingUp, BarChart3, GitCompare, Plus } from 'lucide-react'
+import { TrendingUp, BarChart3, GitCompare, Plus, Layers } from 'lucide-react'
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: BarChart3 },
+  { path: '/sectors', label: 'Sectors', icon: Layers },
   { path: '/compare', label: 'Compare', icon: GitCompare },
   { path: '/add-company', label: 'Add Company', icon: Plus },
 ]

@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { Search, Building2, TrendingUp, TrendingDown, Loader2, AlertCircle } from 'lucide-react'
 import { getCompanies, getQueueStatus, searchCompanies } from '@/lib/api'
+import CrawlerStatusMonitor from '@/components/CrawlerStatusMonitor'
 
 export default function Dashboard() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -72,6 +73,9 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
+      {/* Real-time Crawler Status Monitor */}
+      <CrawlerStatusMonitor />
+
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">

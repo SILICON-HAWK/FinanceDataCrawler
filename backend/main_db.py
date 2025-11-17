@@ -1,16 +1,18 @@
 """
 FastAPI Backend for Finance Data Crawler with PostgreSQL
 """
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from typing import List, Optional
 from datetime import datetime
+import asyncio
 
 import crud
 import models
 from database import engine, get_db
+from websocket_manager import manager, broadcast_crawler_status
 
 # Create database tables
 models.Base.metadata.create_all(bind=engine)
@@ -245,6 +247,86 @@ def get_sectors(db: Session = Depends(get_db)):
     """Get all sectors"""
     sectors = crud.get_sectors(db)
     return sectors
+
+@app.get("/api/companies/filter")
+def filter_companies(
+    min_market_cap: Optional[float] = None,
+    max_market_cap: Optional[float] = None,
+    min_roe: Optional[float] = None,
+    min_roce: Optional[float] = None,
+    min_pe: Optional[float] = None,
+    max_pe: Optional[float] = None,
+    sort_by: Optional[str] = "name",
+    sort_order: Optional[str] = "asc",
+    limit: int = 100,
+    db: Session = Depends(get_db)
+):
+    """Advanced filtering and sorting of companies"""
+    query = db.query(models.Company)
+
+    # Apply filters (simplified - would need proper numeric parsing in production)
+    # In production, you'd parse market_cap, roe, etc. from strings to numbers
+
+    # Sorting
+    if sort_by == "name":
+        query = query.order_by(models.Company.name.asc() if sort_order == "asc" else models.Company.name.desc())
+    elif sort_by == "market_cap":
+        query = query.order_by(models.Company.market_cap.asc() if sort_order == "asc" else models.Company.market_cap.desc())
+
+    companies = query.limit(limit).all()
+    return companies
+
+@app.get("/api/sectors/analysis")
+def sector_analysis(db: Session = Depends(get_db)):
+    """Get sector-wise analysis with company counts and average metrics"""
+    sectors = crud.get_sectors(db)
+
+    sector_stats = []
+    for sector in sectors:
+        # Get companies in this sector (would need sector field in Company model)
+        # This is a placeholder - you'd need to add sector relationships
+        sector_stats.append({
+            "sector_name": sector.name,
+            "companies_count": sector.companies_count if hasattr(sector, 'companies_count') else 0,
+            "is_visited": sector.is_visited,
+            "url": sector.url
+        })
+
+    return sector_stats
+
+@app.websocket("/ws/crawler-status")
+async def websocket_crawler_status(websocket: WebSocket):
+    """WebSocket endpoint for real-time crawler status updates"""
+    await manager.connect(websocket)
+    try:
+        while True:
+            # Keep connection alive and send periodic updates
+            await asyncio.sleep(5)
+
+            # Get current status from database
+            db = next(get_db())
+            try:
+                stats = crud.get_stats(db)
+                company_queue = crud.get_queue_items(db, queue_type="company", status="pending")
+                processing_queue = crud.get_queue_items(db, queue_type="company", status="processing")
+
+                status = {
+                    "total_companies": stats["total_companies"],
+                    "pending_in_queue": stats["pending_in_queue"],
+                    "companies_in_queue": len(company_queue),
+                    "currently_processing": len(processing_queue),
+                    "timestamp": datetime.now().isoformat()
+                }
+
+                await websocket.send_json(status)
+            finally:
+                db.close()
+
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
+    except Exception as e:
+        print(f"WebSocket error: {e}")
+        manager.disconnect(websocket)
 
 if __name__ == "__main__":
     import uvicorn
