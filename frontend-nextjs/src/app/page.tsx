@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
-import { Search, Building2, TrendingUp, TrendingDown, Loader2, AlertCircle } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { getCompanies, getQueueStatus, searchCompanies } from '@/lib/api'
 import CrawlerStatusMonitor from '@/components/CrawlerStatusMonitor'
 
@@ -42,102 +42,77 @@ export default function Dashboard() {
 
   const displayCompanies = searchResults || companies || []
 
-  const getPriceChangeColor = (change?: string) => {
-    if (!change) return 'text-gray-500'
+  const getPriceChangeSymbol = (change?: string) => {
+    if (!change) return ''
     const value = parseFloat(change.replace('%', ''))
-    return value >= 0 ? 'text-green-600' : 'text-red-600'
-  }
-
-  const getPriceChangeIcon = (change?: string) => {
-    if (!change) return null
-    const value = parseFloat(change.replace('%', ''))
-    return value >= 0 ? <TrendingUp className="w-4 h-4" /> : <TrendingDown className="w-4 h-4" />
+    return value >= 0 ? '+' : ''
   }
 
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 className="w-8 h-8 animate-spin text-blue-600" />
+        <div className="flex flex-col items-center space-y-3">
+          <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
+          <p className="text-sm text-gray-600">Loading companies...</p>
+        </div>
       </div>
     )
   }
 
   if (error) {
     return (
-      <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center space-x-3">
-        <AlertCircle className="w-5 h-5 text-red-600" />
-        <p className="text-red-800">Error loading companies. Make sure the backend is running.</p>
+      <div className="border border-gray-300 rounded p-4">
+        <p className="text-sm text-gray-700">Error loading companies. Please ensure the backend is running.</p>
       </div>
     )
   }
 
   return (
-    <div className="space-y-6">
-      {/* Real-time Crawler Status Monitor */}
+    <div className="space-y-8">
+      {/* Real-time Crawler Status */}
       <CrawlerStatusMonitor />
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Total Companies</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
-                {queueStatus?.total_companies_scraped || companies?.length || 0}
-              </p>
-            </div>
-            <div className="bg-blue-100 p-3 rounded-lg">
-              <Building2 className="w-6 h-6 text-blue-600" />
-            </div>
-          </div>
+      {/* Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="border border-gray-200 rounded p-6 bg-white">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Total Companies</p>
+          <p className="text-3xl font-light text-gray-900">
+            {queueStatus?.total_companies_scraped || companies?.length || 0}
+          </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Companies in Queue</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
-                {queueStatus?.companies_in_queue || 0}
-              </p>
-            </div>
-            <div className="bg-green-100 p-3 rounded-lg">
-              <Loader2 className="w-6 h-6 text-green-600" />
-            </div>
-          </div>
+        <div className="border border-gray-200 rounded p-6 bg-white">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">In Queue</p>
+          <p className="text-3xl font-light text-gray-900">
+            {queueStatus?.companies_in_queue || 0}
+          </p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gray-600">Sectors in Queue</p>
-              <p className="text-3xl font-bold text-gray-900 mt-2">
-                {queueStatus?.sectors_in_queue || 0}
-              </p>
-            </div>
-            <div className="bg-purple-100 p-3 rounded-lg">
-              <TrendingUp className="w-6 h-6 text-purple-600" />
-            </div>
-          </div>
+        <div className="border border-gray-200 rounded p-6 bg-white">
+          <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Sectors</p>
+          <p className="text-3xl font-light text-gray-900">
+            {queueStatus?.sectors_in_queue || 0}
+          </p>
         </div>
       </div>
 
-      {/* Search Bar */}
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-        <form onSubmit={handleSearch} className="flex items-center space-x-4">
+      {/* Search */}
+      <div className="border border-gray-200 rounded p-6 bg-white">
+        <form onSubmit={handleSearch} className="flex items-center space-x-3">
           <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search companies..."
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+              className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded text-sm focus:outline-none focus:border-gray-900 transition-colors"
             />
           </div>
           <button
             type="submit"
             disabled={isSearching}
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50"
+            className="px-6 py-2.5 bg-gray-900 text-white rounded text-sm font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSearching ? 'Searching...' : 'Search'}
           </button>
@@ -148,7 +123,7 @@ export default function Dashboard() {
                 setSearchTerm('')
                 setSearchResults(null)
               }}
-              className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors font-medium"
+              className="px-6 py-2.5 border border-gray-300 text-gray-700 rounded text-sm font-medium hover:bg-gray-50 transition-colors"
             >
               Clear
             </button>
@@ -156,65 +131,57 @@ export default function Dashboard() {
         </form>
       </div>
 
-      {/* Companies Grid */}
+      {/* Companies List */}
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
-          {searchResults ? 'Search Results' : 'All Companies'}
+        <h2 className="text-lg font-medium text-gray-900 mb-4">
+          {searchResults ? 'Search Results' : 'Companies'}
         </h2>
         {displayCompanies.length === 0 ? (
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-12 text-center">
-            <Building2 className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-500">
-              {searchResults ? 'No companies found' : 'No companies available. Add companies using the crawler or Add Company page.'}
+          <div className="border border-gray-200 rounded p-12 text-center bg-white">
+            <p className="text-sm text-gray-500">
+              {searchResults ? 'No companies found' : 'No companies available'}
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-2">
             {displayCompanies.map((company: any) => (
               <Link
                 key={company.id}
                 href={`/company/${encodeURIComponent(company.name)}`}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow"
+                className="block border border-gray-200 rounded p-4 bg-white hover:border-gray-900 transition-colors"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 text-lg mb-1">
+                <div className="flex items-center justify-between">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-medium text-gray-900 truncate">
                       {company.name}
                     </h3>
                     {company.market_cap && (
-                      <p className="text-sm text-gray-500">
+                      <p className="text-xs text-gray-500 mt-0.5">
                         Market Cap: {company.market_cap}
                       </p>
                     )}
                   </div>
-                  <div className="bg-blue-100 p-2 rounded-lg">
-                    <Building2 className="w-5 h-5 text-blue-600" />
-                  </div>
-                </div>
 
-                {company.stock_price && (
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600">Stock Price</span>
-                      <span className="text-lg font-bold text-gray-900">
-                        {company.stock_price}
-                      </span>
-                    </div>
-                    {company.percentage_change && (
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">Change</span>
-                        <span
-                          className={`flex items-center space-x-1 font-semibold ${getPriceChangeColor(
-                            company.percentage_change
-                          )}`}
-                        >
-                          {getPriceChangeIcon(company.percentage_change)}
-                          <span>{company.percentage_change}</span>
-                        </span>
+                  <div className="flex items-center space-x-6 ml-4">
+                    {company.stock_price && (
+                      <div className="text-right">
+                        <p className="text-sm font-medium text-gray-900">
+                          ₹{company.stock_price}
+                        </p>
+                        {company.percentage_change && (
+                          <p className={`text-xs font-medium ${
+                            parseFloat(company.percentage_change.replace('%', '')) >= 0
+                              ? 'text-gray-900'
+                              : 'text-gray-600'
+                          }`}>
+                            {getPriceChangeSymbol(company.percentage_change)}{company.percentage_change}
+                          </p>
+                        )}
                       </div>
                     )}
+                    <div className="text-gray-400">→</div>
                   </div>
-                )}
+                </div>
               </Link>
             ))}
           </div>

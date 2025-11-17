@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Activity, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 
 interface CrawlerStatus {
   total_companies: number
@@ -73,11 +72,13 @@ export default function CrawlerStatusMonitor() {
 
   if (error) {
     return (
-      <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center space-x-3">
-        <AlertCircle className="w-5 h-5 text-red-600" />
-        <div>
-          <p className="text-sm font-medium text-red-800">Crawler Status Monitor</p>
-          <p className="text-xs text-red-600">{error}</p>
+      <div className="border border-gray-300 rounded p-3 bg-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wider text-gray-500">Backend Status</p>
+            <p className="text-sm text-gray-900 mt-1">Connection Error</p>
+          </div>
+          <div className="w-2 h-2 rounded-full bg-gray-400"></div>
         </div>
       </div>
     )
@@ -85,10 +86,13 @@ export default function CrawlerStatusMonitor() {
 
   if (!isConnected) {
     return (
-      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 flex items-center space-x-3">
-        <Loader2 className="w-5 h-5 animate-spin text-yellow-600" />
-        <div>
-          <p className="text-sm font-medium text-yellow-800">Connecting to crawler...</p>
+      <div className="border border-gray-300 rounded p-3 bg-white">
+        <div className="flex items-center justify-between">
+          <div>
+            <p className="text-xs uppercase tracking-wider text-gray-500">Backend Status</p>
+            <p className="text-sm text-gray-900 mt-1">Connecting...</p>
+          </div>
+          <div className="w-2 h-2 rounded-full bg-gray-400 animate-pulse"></div>
         </div>
       </div>
     )
@@ -101,44 +105,34 @@ export default function CrawlerStatusMonitor() {
   const isProcessing = status.currently_processing > 0
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+    <div className="border border-gray-200 rounded p-4 bg-white">
       <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center space-x-2">
-          <Activity className="w-5 h-5 text-blue-600" />
-          <h3 className="text-sm font-semibold text-gray-900">Real-time Crawler Status</h3>
+        <div>
+          <p className="text-xs uppercase tracking-wider text-gray-500">Backend Status</p>
+          <p className="text-sm font-medium text-gray-900 mt-1">
+            {isProcessing ? 'Processing Data' : 'Online'}
+          </p>
         </div>
-        <div className="flex items-center space-x-2">
-          <div className={`w-2 h-2 rounded-full ${isProcessing ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`} />
-          <span className="text-xs text-gray-600">
-            {isProcessing ? 'Processing' : 'Idle'}
-          </span>
+        <div className={`w-2 h-2 rounded-full ${isProcessing ? 'bg-gray-900 animate-pulse' : 'bg-gray-900'}`} />
+      </div>
+
+      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200">
+        <div>
+          <p className="text-xs text-gray-500">Total</p>
+          <p className="text-lg font-light text-gray-900 mt-1">{status.total_companies}</p>
+        </div>
+        <div>
+          <p className="text-xs text-gray-500">Queue</p>
+          <p className="text-lg font-light text-gray-900 mt-1">{status.companies_in_queue}</p>
+        </div>
+        <div>
+          <p className="text-xs text-gray-500">Active</p>
+          <p className="text-lg font-light text-gray-900 mt-1">{status.currently_processing}</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div>
-          <p className="text-xs text-gray-600">Total Companies</p>
-          <p className="text-lg font-bold text-gray-900">{status.total_companies}</p>
-        </div>
-        <div>
-          <p className="text-xs text-gray-600">In Queue</p>
-          <p className="text-lg font-bold text-blue-600">{status.companies_in_queue}</p>
-        </div>
-        <div>
-          <p className="text-xs text-gray-600">Processing</p>
-          <p className="text-lg font-bold text-green-600">{status.currently_processing}</p>
-        </div>
-        <div>
-          <p className="text-xs text-gray-600">Status</p>
-          <div className="flex items-center space-x-1 mt-1">
-            <CheckCircle className="w-4 h-4 text-green-600" />
-            <span className="text-sm font-medium text-green-600">Live</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-3 pt-3 border-t border-gray-200">
-        <p className="text-xs text-gray-500">
+      <div className="mt-4 pt-4 border-t border-gray-200">
+        <p className="text-xs text-gray-400">
           Last update: {new Date(status.timestamp).toLocaleTimeString()}
         </p>
       </div>

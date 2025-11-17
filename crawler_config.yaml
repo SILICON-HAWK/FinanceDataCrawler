@@ -1,0 +1,142 @@
+# Finance Data Crawler Configuration
+# All settings can be overridden via environment variables
+
+crawler:
+  # Base URL for scraping
+  base_url: "https://www.screener.in"
+
+  # Rate limiting (seconds between requests)
+  rate_limit_interval: 15
+
+  # Request timeout (seconds)
+  request_timeout: 10
+
+  # Maximum retry attempts
+  max_retries: 3
+
+  # Sector page limit (companies per page)
+  sector_limit: 50
+
+  # User agent rotation (randomly selected)
+  user_agents:
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    - "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0"
+    - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15"
+
+  # Enable/disable crawler modules
+  modules:
+    company_overview: true
+    quarterly_data: true
+    balance_sheet: true
+    cash_flow: true
+    profit_loss: true
+    ratios: true
+    shareholding: true
+
+  # Data extraction configuration
+  extraction:
+    # Skip companies with missing critical data
+    skip_on_missing_data: false
+
+    # Validate data before saving
+    validate_before_save: true
+
+    # Minimum data quality score (0-100)
+    min_quality_score: 70
+
+# Storage configuration
+storage:
+  # Save to JSON files
+  save_json: true
+
+  # JSON output directory
+  json_dir: "json"
+
+  # Companies archive directory
+  companies_dir: "companies"
+
+  # Auto-import to database
+  auto_import_db: true
+
+  # Database connection (overrides via env vars)
+  database:
+    type: "postgresql"  # postgresql or sqlite
+    host: "${DATABASE_HOST:localhost}"
+    port: 5432
+    name: "${DATABASE_NAME:finance_crawler}"
+    user: "${DATABASE_USER:finance_user}"
+    password: "${DATABASE_PASSWORD:finance_password}"
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+
+  # Log to file
+  log_to_file: true
+  log_file: "crawler.log"
+
+  # Log rotation
+  max_log_size_mb: 10
+  backup_count: 5
+
+  # Colorized console output
+  colorize: true
+
+# Queue management
+queue:
+  # Process queue on startup
+  auto_process_queue: false
+
+  # Maximum companies to process in one session
+  max_batch_size: 20
+
+  # Priority order (high, medium, low)
+  respect_priority: true
+
+  # Skip already scraped companies
+  skip_existing: true
+
+# Monitoring & notifications
+monitoring:
+  # Enable WebSocket status broadcasting
+  enable_websocket: true
+
+  # Status update interval (seconds)
+  status_interval: 5
+
+  # Email notifications (future feature)
+  email_notifications: false
+
+  # Slack webhooks (future feature)
+  slack_webhook: ""
+
+# Performance & optimization
+performance:
+  # Concurrent requests (use with caution)
+  max_concurrent: 1
+
+  # Request compression
+  use_compression: true
+
+  # Cache responses (for development)
+  cache_responses: false
+  cache_ttl_hours: 24
+
+  # Memory limits
+  max_memory_mb: 512
+
+# Error handling
+errors:
+  # Continue on errors
+  continue_on_error: true
+
+  # Retry failed companies
+  retry_failed: true
+
+  # Save partial data on failure
+  save_partial_data: true
+
+  # Error notification threshold
+  max_consecutive_errors: 5

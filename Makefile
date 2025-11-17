@@ -1,4 +1,4 @@
-.PHONY: help setup start stop restart logs clean build migrate shell-backend shell-db status
+.PHONY: help setup start stop restart logs clean build migrate shell-backend shell-db status crawl crawl-test
 
 # Default target
 help:
@@ -10,6 +10,10 @@ help:
 	@echo "  make start      - Start all services"
 	@echo "  make stop       - Stop all services"
 	@echo "  make restart    - Restart all services"
+	@echo ""
+	@echo "Crawler:"
+	@echo "  make crawl      - Run the web scraper"
+	@echo "  make crawl-test - Test crawl a single company"
 	@echo ""
 	@echo "Development:"
 	@echo "  make logs       - View logs (all services)"
@@ -101,3 +105,11 @@ clean-all:
 	else \
 		echo "Cancelled."; \
 	fi
+
+crawl:
+	@echo "Starting crawler (live scraping)..."
+	@python crawler_main.py
+
+crawl-test:
+	@echo "Running crawler test..."
+	@python crawler_main.py
