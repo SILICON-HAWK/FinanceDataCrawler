@@ -8,9 +8,9 @@ import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from config import COMPANIES_DIR
-from utils.logger import pipeline_logger
-from utils.helpers import validate_financial_data
+from ..config import COMPANIES_DIR
+from ..utils.logger import pipeline_logger
+from ..utils.helpers import validate_financial_data
 
 class Storage:
     """

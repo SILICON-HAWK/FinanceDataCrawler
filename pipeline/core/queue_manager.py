@@ -8,9 +8,9 @@ import time
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 
-from config import SECTORS_QUEUE_FILE, COMPANY_QUEUE_FILE, VISITED_SECTORS_FILE
-from utils.logger import pipeline_logger
-from utils.helpers import clean_text, extract_company_name_from_url
+from ..config import SECTORS_QUEUE_FILE, COMPANY_QUEUE_FILE, VISITED_SECTORS_FILE
+from ..utils.logger import pipeline_logger
+from ..utils.helpers import clean_text, extract_company_name_from_url
 
 class QueueManager:
     """

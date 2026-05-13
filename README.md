@@ -1,58 +1,109 @@
-Creating a interactive Dashboard for financial data of Listed indian companies
+# FinanceDataCrawler
 
+Scrapes financial data for listed Indian companies from Screener.in, stores it as JSON, and serves it via a SvelteKit dashboard.
 
-Main Task: Web Scraping Data Extraction and DashBoard
-=
-Task 1: Retreving HTML ✔️
--
-Sub Task 1.1: Send HTTP Request ✔️
+## Structure
 
-Sub Task 1.2: Get HTML Response ✔️
+```
+backend/                         # FastAPI server
+├── main.py                      # Entry point — uvicorn backend.main:app
+├── requirements.txt
+├── Dockerfile
+├── pipeline/                    # Core scraping pipeline (moved from pipeline/)
+│   ├── main.py                  # FinanceDataPipeline orchestrator
+│   ├── config.py                # Paths, selectors, rate-limit config
+│   ├── core/
+│   │   ├── crawler.py           # HTTP client with UA rotation + rate limiting
+│   │   ├── queue_manager.py     # Sector/company queue persistence + search
+│   │   └── storage.py           # JSON read/write for company data
+│   ├── parsers/                 # HTML parsers (sector, company)
+│   └── utils/                   # Helpers, logger
+├── api/
+│   ├── schemas.py               # Pydantic models
+│   ├── deps.py                  # DI helpers
+│   └── routes/
+│       ├── discovery.py         # Sector & company discovery
+│       ├── extraction.py        # Company extraction (single/bulk)
+│       └── status.py            # Pipeline status, company listing
+└── data/                        # Queue files (sectors, companies, visited)
 
-Task 2: Data Extraction ✔️
--
-Sub Task 2.1: Parse HTML ✔️
+frontend/                        # SvelteKit app
+├── src/
+│   ├── lib/api.js               # API client → FastAPI backend
+│   ├── lib/components/
+│   ├── routes/
+│   │   ├── +page.svelte         # Dashboard / company list
+│   │   ├── discover/+page.svelte # Admin: run discovery
+│   │   ├── extract/+page.svelte  # Admin: trigger extraction
+│   │   └── company/[name]/      # Company detail page
+│   └── app.css
+├── Dockerfile
+└── package.json
 
-Sub Task 2.2: Extract Financial Data ✔️
+companies/                       # Extracted company JSON files
+backend/data/                    # Queue state files (sectors, companies, visited)
+```
 
-Task 3: Queue and Hash Map Implementation ❔
--
-Sub Task 3.1: Implement Queue ✔️
+## Quick Start (Local Dev)
 
-Sub Task 3.2: Implement Hash Map
+**1. Backend (FastAPI):**
 
-Task 4: Data Storage ❔
--
-Storing data in Json intermedia for now
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn backend.main:app --reload --port 8000
+```
 
-TO-DO - SQL/PostGres server ❔ 
+API runs at `http://localhost:8000`. Docs at `/docs`.
 
-Sub Task 4.1: Connect to Database
+**2. Frontend (SvelteKit):**
 
-Sub Task 4.2: Create Table
+```bash
+cd frontend
+npm install
+npm run dev -- --host
+```
 
-Sub Task 4.3: Insert Data
+Frontend runs at `http://localhost:5173`.
 
-Task 5: Create Dash Board 
--
-Feature maybe ?
+## Docker
 
-  - Search function
-  - Compare
-  - visualise
+```bash
+docker compose up backend-dev frontend-dev
+```
 
-----
-/// NOTES
+Or fully containerized:
 
-**1. Processing Limit:**
-- Set a limit on the number of pages to scrape per session
+```bash
+docker compose up -d backend-dev frontend-dev
+```
 
-**2. Rate Limit:**
-- Set a delay between HTTP requests (e.g., 1-5 seconds) to avoid overwhelming the website.
+## API Endpoints
 
-**3. Crawl Limit:**
-- Set a limit on the number of crawls throughout the website per session
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/status` | Pipeline stats (sectors, companies, storage) |
+| `POST` | `/api/discover/sectors` | Scrape Screener.in explore page → populate sector queue |
+| `POST` | `/api/discover/companies` | Scrape unvisited sectors → populate company queue |
+| `GET` | `/api/companies` | List discovered companies grouped by sector (`?search=`) |
+| `GET` | `/api/companies/{name}` | Get extracted JSON for a company |
+| `POST` | `/api/extract` | Extract companies (`company_urls[]`, `sector_names[]`, `max_companies`, `skip_existing`) |
+| `GET` | `/api/extract/status` | Current extraction progress |
 
-**4. Hash Map for Listed Companies:**
-- Implement a hash map (dictionary) to store the listed companies
-- Check the hash map before scraping a company's data to avoid duplication
+All long-running operations run in background threads. Check `/api/extract/status` to poll progress.
+
+## Frontend Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Company listing with search & filter |
+| `/company/[name]` | Full financial data (quarterly, balance sheet, cash flows, ratios, shareholding) |
+| `/discover` | Admin: run sector & company discovery, see queue stats |
+| `/extract` | Admin: browse companies by sector, select, trigger extraction |
+
+## Running the Pipeline
+
+From the admin UI (`/discover`):
+1. Click **Discover Sectors** to scrape the Screener.in explore page
+2. Click **Discover Companies** to find all companies in unvisited sectors
+3. Go to `/extract`, select sectors, click **Start Extraction**

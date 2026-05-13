@@ -1,18 +1,64 @@
 services:
-  finance-crawler:
-    build: .
-    container_name: finance-crawler
+  backend-dev:
+    build: ./backend
+    container_name: backend-dev
+    networks:
+      - web
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - ./backend/data:/app/backend/data
+      - ./companies:/app/companies
+    command: >
+      sh -c "pip install -e . 2>/dev/null; uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload"
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: backend
+    profiles:
+      - never
+    volumes:
+      - ./backend/data:/data
+      - ./companies:/companies
+    restart: unless-stopped
+    command: ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  frontend-dev:
+    image: node:22-alpine
+    container_name: frontend-dev
     networks:
       - web
     labels:
-      caddy: finance-crawler.local
-      caddy.reverse_proxy: "{{upstreams 8888}}"
-    ports:
-      - 8888:8888
+      caddy: :5173
+      caddy.reverse_proxy: "{{upstreams 5173}}"
+    working_dir: /app
     volumes:
-      - .:/app
-    command: >
-      sh -c "pip install -e . 2>/dev/null; jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
+      - ./frontend:/app
+      - ./companies:/companies
+    environment:
+      - COMPANIES_DIR=/companies
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    networks:
+      - web
+    labels:
+      caddy: :4173
+      caddy.reverse_proxy: "{{upstreams 3000}}"
+    volumes:
+      - ./companies:/data
+    environment:
+      - COMPANIES_DIR=/data
+      - PORT=3000
+    ports:
+      - "4173:3000"
     restart: unless-stopped
 
 networks:

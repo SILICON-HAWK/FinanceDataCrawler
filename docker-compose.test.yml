@@ -1,0 +1,132 @@
+version: '3.8'
+
+services:
+  # Test runner service
+  test-runner:
+    build: .
+    container_name: finance-crawler-test
+    volumes:
+      - .:/app
+      - test-results:/app/test-results
+    environment:
+      - PYTHONPATH=/app
+      - TEST_MODE=container
+    command: >
+      sh -c "
+        echo '=== Starting Finance Data Crawler Tests ===' &&
+        python pipeline/container_test.py &&
+        echo '=== Tests Completed ==='
+      "
+    networks:
+      - test-network
+
+  # Individual test services
+  test-config:
+    build: .
+    container_name: finance-crawler-test-config
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Configuration ===' &&
+        python -m unittest pipeline.test_harness.TestConfig -v
+      "
+
+  test-utils:
+    build: .
+    container_name: finance-crawler-test-utils
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Utilities ===' &&
+        python -m unittest pipeline.test_harness.TestUtils -v
+      "
+
+  test-storage:
+    build: .
+    container_name: finance-crawler-test-storage
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Storage ===' &&
+        python -m unittest pipeline.test_harness.TestStorage -v
+      "
+
+  test-queue:
+    build: .
+    container_name: finance-crawler-test-queue
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Queue Manager ===' &&
+        python -m unittest pipeline.test_harness.TestQueueManager -v
+      "
+
+  test-parsers:
+    build: .
+    container_name: finance-crawler-test-parsers
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Parsers ===' &&
+        python -m unittest pipeline.test_harness.TestParsers -v
+      "
+
+  test-pipeline:
+    build: .
+    container_name: finance-crawler-test-pipeline
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Testing Pipeline Integration ===' &&
+        python -m unittest pipeline.test_harness.TestPipelineIntegration -v
+      "
+
+  # Quick smoke test
+  smoke-test:
+    build: .
+    container_name: finance-crawler-smoke-test
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: >
+      sh -c "
+        echo '=== Quick Smoke Test ===' &&
+        python -c '
+        try:
+            from config import BASE_URL
+            from utils.helpers import clean_text
+            print(\"✓ Basic imports successful\")
+            print(\"✓ Base URL:\", BASE_URL)
+            print(\"✓ Text cleaning:\", clean_text(\"  Test  \"))
+            print(\"✓ Smoke test passed\")
+        except Exception as e:
+            print(\"✗ Smoke test failed:\", e)
+            exit(1)
+        '
+      "
+
+networks:
+  test-network:
+    driver: bridge
+
+volumes:
+  test-results:

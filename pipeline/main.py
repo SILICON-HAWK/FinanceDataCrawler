@@ -10,13 +10,13 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from config import EXPLORE_URL
-from core.crawler import Crawler
-from core.queue_manager import QueueManager
-from core.storage import Storage
-from parsers.sector_parser import SectorParser
-from parsers.company_parser import CompanyParser
-from utils.logger import pipeline_logger
+from .config import EXPLORE_URL
+from .core.crawler import Crawler
+from .core.queue_manager import QueueManager
+from .core.storage import Storage
+from .parsers.sector_parser import SectorParser
+from .parsers.company_parser import CompanyParser
+from .utils.logger import pipeline_logger
 import time
 
 class FinanceDataPipeline:
