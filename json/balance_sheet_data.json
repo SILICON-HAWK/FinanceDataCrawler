@@ -1,16 +1,4 @@
 {
-    "Mar 2013": {
-        "Equity Capital": "104",
-        "Reserves": "14,886",
-        "Borrowings": "260",
-        "Other Liabilities": "5,128",
-        "Total Liabilities": "20,377",
-        "Fixed Assets": "5,647",
-        "CWIP": "563",
-        "Investments": "2,412",
-        "Other Assets": "11,756",
-        "Total Assets": "20,377"
-    },
     "Mar 2014": {
         "Equity Capital": "207",
         "Reserves": "18,318",
@@ -135,24 +123,36 @@
         "Equity Capital": "240",
         "Reserves": "63,427",
         "Borrowings": "3,274",
-        "Other Liabilities": "18,367",
-        "Total Liabilities": "85,308",
-        "Fixed Assets": "23,211",
+        "Other Liabilities": "18,387",
+        "Total Liabilities": "85,328",
+        "Fixed Assets": "23,248",
         "CWIP": "5,354",
         "Investments": "15,026",
-        "Other Assets": "41,717",
-        "Total Assets": "85,308"
+        "Other Assets": "41,700",
+        "Total Assets": "85,328"
     },
-    "Sep 2024": {
+    "Mar 2025": {
         "Equity Capital": "240",
-        "Reserves": "68,875",
-        "Borrowings": "2,572",
-        "Other Liabilities": "16,429",
-        "Total Liabilities": "88,116",
-        "Fixed Assets": "28,318",
-        "CWIP": "1,150",
-        "Investments": "17,744",
-        "Other Assets": "40,904",
-        "Total Assets": "88,116"
+        "Reserves": "71,978",
+        "Borrowings": "2,362",
+        "Other Liabilities": "17,328",
+        "Total Liabilities": "91,908",
+        "Fixed Assets": "22,586",
+        "CWIP": "6,644",
+        "Investments": "18,354",
+        "Other Assets": "44,324",
+        "Total Assets": "91,908"
+    },
+    "Sep 2025": {
+        "Equity Capital": "240",
+        "Reserves": "77,580",
+        "Borrowings": "5,215",
+        "Other Liabilities": "20,672",
+        "Total Liabilities": "103,706",
+        "Fixed Assets": "33,371",
+        "CWIP": "1,355",
+        "Investments": "19,543",
+        "Other Assets": "49,438",
+        "Total Assets": "103,706"
     }
 }

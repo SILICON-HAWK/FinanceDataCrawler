@@ -1,18 +1,10 @@
 {
-    "Mar 2013": {
-        "Debtor Days": "79",
-        "Inventory Days": "454",
-        "Days Payable": "186",
-        "Cash Conversion Cycle": "347",
-        "Working Capital Days": "111",
-        "ROCE %": "32"
-    },
     "Mar 2014": {
         "Debtor Days": "50",
         "Inventory Days": "410",
         "Days Payable": "174",
         "Cash Conversion Cycle": "286",
-        "Working Capital Days": "126",
+        "Working Capital Days": "71",
         "ROCE %": "34"
     },
     "Mar 2015": {
@@ -20,7 +12,7 @@
         "Inventory Days": "307",
         "Days Payable": "178",
         "Cash Conversion Cycle": "197",
-        "Working Capital Days": "76",
+        "Working Capital Days": "-7",
         "ROCE %": "23"
     },
     "Mar 2016": {
@@ -28,7 +20,7 @@
         "Inventory Days": "370",
         "Days Payable": "207",
         "Cash Conversion Cycle": "251",
-        "Working Capital Days": "104",
+        "Working Capital Days": "37",
         "ROCE %": "18"
     },
     "Mar 2017": {
@@ -36,7 +28,7 @@
         "Inventory Days": "307",
         "Days Payable": "197",
         "Cash Conversion Cycle": "193",
-        "Working Capital Days": "73",
+        "Working Capital Days": "-4",
         "ROCE %": "20"
     },
     "Mar 2018": {
@@ -44,7 +36,7 @@
         "Inventory Days": "338",
         "Days Payable": "234",
         "Cash Conversion Cycle": "212",
-        "Working Capital Days": "79",
+        "Working Capital Days": "-31",
         "ROCE %": "10"
     },
     "Mar 2019": {
@@ -52,7 +44,7 @@
         "Inventory Days": "366",
         "Days Payable": "192",
         "Cash Conversion Cycle": "285",
-        "Working Capital Days": "137",
+        "Working Capital Days": "31",
         "ROCE %": "10"
     },
     "Mar 2020": {
@@ -60,7 +52,7 @@
         "Inventory Days": "311",
         "Days Payable": "142",
         "Cash Conversion Cycle": "274",
-        "Working Capital Days": "112",
+        "Working Capital Days": "51",
         "ROCE %": "10"
     },
     "Mar 2021": {
@@ -68,7 +60,7 @@
         "Inventory Days": "378",
         "Days Payable": "167",
         "Cash Conversion Cycle": "310",
-        "Working Capital Days": "84",
+        "Working Capital Days": "51",
         "ROCE %": "13"
     },
     "Mar 2022": {
@@ -76,7 +68,7 @@
         "Inventory Days": "315",
         "Days Payable": "158",
         "Cash Conversion Cycle": "255",
-        "Working Capital Days": "55",
+        "Working Capital Days": "47",
         "ROCE %": "17"
     },
     "Mar 2023": {
@@ -84,7 +76,7 @@
         "Inventory Days": "360",
         "Days Payable": "194",
         "Cash Conversion Cycle": "261",
-        "Working Capital Days": "93",
+        "Working Capital Days": "40",
         "ROCE %": "16"
     },
     "Mar 2024": {
@@ -92,7 +84,15 @@
         "Inventory Days": "338",
         "Days Payable": "194",
         "Cash Conversion Cycle": "229",
-        "Working Capital Days": "78",
+        "Working Capital Days": "55",
         "ROCE %": "17"
+    },
+    "Mar 2025": {
+        "Debtor Days": "91",
+        "Inventory Days": "348",
+        "Days Payable": "210",
+        "Cash Conversion Cycle": "228",
+        "Working Capital Days": "65",
+        "ROCE %": "20"
     }
 }

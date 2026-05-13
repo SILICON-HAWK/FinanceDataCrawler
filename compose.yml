@@ -1,0 +1,20 @@
+services:
+  finance-crawler:
+    build: .
+    container_name: finance-crawler
+    networks:
+      - web
+    labels:
+      caddy: finance-crawler.local
+      caddy.reverse_proxy: "{{upstreams 8888}}"
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/app
+    command: >
+      sh -c "pip install -e . 2>/dev/null; jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root"
+    restart: unless-stopped
+
+networks:
+  web:
+    external: true

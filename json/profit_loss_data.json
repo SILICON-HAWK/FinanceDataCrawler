@@ -1,18 +1,5 @@
 {
     "Profit & Loss": {
-        "Mar 2013": {
-            "Sales": "11,131",
-            "Expenses": "6,346",
-            "Operating Profit": "4,784",
-            "OPM %": "43%",
-            "Other Income": "-90",
-            "Interest": "43",
-            "Depreciation": "336",
-            "Profit before tax": "4,315",
-            "Tax %": "20%",
-            "Net Profit": "3,469",
-            "EPS in Rs": "14.40"
-        },
         "Mar 2014": {
             "Sales": "16,080",
             "Expenses": "9,078",
@@ -156,43 +143,56 @@
             "Net Profit": "9,610",
             "EPS in Rs": "39.91"
         },
+        "Mar 2025": {
+            "Sales": "52,578",
+            "Expenses": "37,464",
+            "Operating Profit": "15,114",
+            "OPM %": "29%",
+            "Other Income": "1,444",
+            "Interest": "231",
+            "Depreciation": "2,575",
+            "Profit before tax": "13,752",
+            "Tax %": "20%",
+            "Net Profit": "10,965",
+            "EPS in Rs": "45.55"
+        },
         "TTM": {
-            "Sales": "50,308",
-            "Expenses": "36,249",
-            "Operating Profit": "14,059",
-            "OPM %": "28%",
-            "Other Income": "1,571",
-            "Interest": "239",
-            "Depreciation": "2,554",
-            "Profit before tax": "12,837",
+            "Sales": "56,809",
+            "Expenses": "39,316",
+            "Operating Profit": "17,493",
+            "OPM %": "31%",
+            "Other Income": "457",
+            "Interest": "302",
+            "Depreciation": "2,826",
+            "Profit before tax": "14,822",
             "Tax %": "null",
-            "Net Profit": "11,117",
-            "EPS in Rs": "46.07"
+            "Net Profit": "10,953",
+            "EPS in Rs": "45.50"
         }
     },
     "Compounded Growth": {
         "Compounded Sales Growth": {
-            "10 Years:": "12%",
-            "5 Years:": "11%",
-            "3 Years:": "13%",
-            "TTM:": "9%"
+            "10 Years:": "7%",
+            "5 Years:": "10%",
+            "3 Years:": "11%",
+            "TTM:": "10%"
         },
         "Compounded Profit Growth": {
-            "10 Years:": "8%",
-            "5 Years:": "23%",
-            "3 Years:": "25%",
-            "TTM:": "25%"
+            "10 Years:": "10%",
+            "5 Years:": "24%",
+            "3 Years:": "20%",
+            "TTM:": "3%"
         },
         "Stock Price CAGR": {
-            "10 Years:": "7%",
-            "5 Years:": "33%",
-            "3 Years:": "32%",
-            "1 Year:": "59%"
+            "10 Years:": "9%",
+            "5 Years:": "21%",
+            "3 Years:": "25%",
+            "1 Year:": "9%"
         },
         "Return on Equity": {
             "10 Years:": "14%",
-            "5 Years:": "14%",
-            "3 Years:": "16%",
+            "5 Years:": "16%",
+            "3 Years:": "17%",
             "Last Year:": "17%"
         }
     }
