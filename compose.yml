@@ -4,6 +4,9 @@ services:
     container_name: backend-dev
     networks:
       - web
+    labels:
+      caddy: :8000
+      caddy.reverse_proxy: "{{upstreams 8000}}"
     ports:
       - "8000:8000"
     volumes:
